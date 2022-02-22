@@ -1,0 +1,57 @@
+<h1>Zoo Application Form</h1>
+
+<br />
+<div style="border: 2px solid black; margin: 10px; padding: 10px">
+  Name:<input type="text" [(ngModel)]="userData.name" />
+  <div *ngIf="!(nameError === '')" id="nameError">{{ nameError }}</div>
+  <hr />
+  Phone:<input type="text" [(ngModel)]="userData.phone" />
+  <div *ngIf="!(phoneError === '')" id="phoneError">{{ phoneError }}</div>
+  <hr />
+  Email:<input type="text" [(ngModel)]="userData.email" />
+  <div *ngIf="!(emailError === '')" id="emailError">{{ emailError }}</div>
+  <hr />
+  Address:<input type="text" [(ngModel)]="userData.login" />
+  <div *ngIf="!(loginError === '')" id="loginError">{{ loginError }}</div>
+  <hr />
+  Sex:<select type="select" name="sex" value="male" [(ngModel)]="userData.sex">
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+  </select>
+  <div *ngIf="!(sexError === '')" id="sexError">{{ sexError }}</div>
+  <hr />
+
+  Age:<input type="number" [(ngModel)]="userData.age" />
+  <div *ngIf="!(ageError === '')" id="ageError">{{ ageError }}</div>
+  <hr />
+
+  Personal Info<input type="text" [(ngModel)]="userData.msgText" />
+  <hr />
+
+  Favorite Animal:<input
+    type="radio"
+    name="animal"
+    value="male"
+    [(ngModel)]="userData.animal"
+  />Свинья
+  <input
+    type="radio"
+    name="animal"
+    value="female"
+    [(ngModel)]="userData.animal"
+  />Хряк
+  <input
+    type="radio"
+    name="animal"
+    value="dunno"
+    [(ngModel)]="userData.animal"
+  />Порося
+  <div *ngIf="!(animalError === '')" id="animalError">{{ animalError }}</div>
+  <hr />
+</div>
+
+<input
+  type="button"
+  value="Submit"
+  (click)="$event.preventDefault(); checkData()"
+/>

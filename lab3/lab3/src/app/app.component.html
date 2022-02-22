@@ -1,0 +1,14 @@
+<div>
+  <div>
+    <label for="num1">Number 1</label>
+    <input  [(ngModel)]='num1' (ngModelChange)='findAverage()' id='num1' type="number" >
+  </div>
+  <div>
+    <label for="num2">Number 2</label>
+    <input  [(ngModel)]='num2'  (ngModelChange)='findAverage()' id='num2' type="number">
+  </div>
+  <div>
+    <p>середнє арифметичне кубів {{ average }}</p>
+    <p>середнє геометричне модулів {{ averageGeometric }}</p>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="table">
+  <h1>Favorites</h1>
+  <ul class="ul">
+    <li *ngFor="let item of favorites">
+      userId {{ item?.userId }} id {{ item?.id }} <br />completed:{{
+        item?.completed
+      }}<br />
+      title: {{ item?.title }}
+    </li>
+  </ul>
+</div>

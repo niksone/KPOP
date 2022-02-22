@@ -1,0 +1,22 @@
+<div class="table">
+  <h1>Favorites</h1>
+  <div
+    class="row"
+    *ngFor="let hero of someInput"
+    (click)="handleOpenInfo(hero)"
+  >
+    <ion-list class="row-text">
+      <ion-item>First Name: {{ hero.name.first }}</ion-item>
+      <ion-item>Last Name: {{ hero.name.last }}</ion-item>
+      <ion-item>Gender: {{ hero.gender }}</ion-item>
+      <ion-item>Date Of Birth: {{ hero.dob.date }}</ion-item>
+      <ion-item>Age: {{ hero.dob.age }}</ion-item>
+    </ion-list>
+    <ion-button
+      class="btn"
+      (click)="$event.stopPropagation(); onFavorite(hero)"
+    >
+      {{ isFavorite(hero) ? "Remove from Favorites" : "Add To Favorite" }}
+    </ion-button>
+  </div>
+</div>

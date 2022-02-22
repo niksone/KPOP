@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+  <div class="table">
+    <h1>Todos</h1>
+    <ul class="ul">
+      <li *ngFor="let item of list" (click)="openInfo(item)">
+        userId {{ item.userId }} id {{ item.id }}
+        <button (click)="$event.stopPropagation(); onFavorite(item)">
+          {{ isFavorite(item) ? "Remove from Favorites" : "Add To Favorite" }}
+        </button>
+        <br />
+        {{ item.completed ? "Completed" : "Not completed" }}
+        <br />
+        title: {{ item.title }}
+      </li>
+    </ul>
+  </div>
+  <br />
+
+  <app-child-component
+    style="width: 50%"
+    [favorites]="favorites"
+  ></app-child-component>
+</div>
+<router-outlet></router-outlet>
